@@ -1,5 +1,3 @@
-outClick.$inject = ['$document', '$parse'];
-
 function outClick($document, $parse) {
   'use strict';
 
@@ -20,5 +18,7 @@ function outClick($document, $parse) {
     }
   };
 }
+
+outClick.$inject = ['$document', '$parse'];
 
 export default outClick;
