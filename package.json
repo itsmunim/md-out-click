@@ -1,0 +1,15 @@
+{
+  "name": "md-out-click",
+  "version": "1.0.0",
+  "description": "Define what happens when you click outside a region",
+  "main": "out.click.directive.min.js",
+  "author": "Munim Dibosh",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.9"
+  }
+}
