@@ -10,6 +10,7 @@
     "dist/*.js",
     "src/*.js"
   ],
+  "keywords": ["click outside element", "angular", "directive", "out click"],
   "repository": "github:dibosh/md-out-click",
   "devDependencies": {
     "babel-core": "^6.26.0",
