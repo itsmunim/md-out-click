@@ -1,6 +1,6 @@
 {
   "name": "md-out-click",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Define what happens when you click outside a region",
   "main": "dist/md.out.click.min.js",
   "author": "Munim Dibosh",
@@ -10,7 +10,12 @@
     "dist/*.js",
     "src/*.js"
   ],
-  "keywords": ["click outside element", "angular", "directive", "out click"],
+  "keywords": [
+    "click outside element",
+    "angular",
+    "directive",
+    "out click"
+  ],
   "repository": "github:dibosh/md-out-click",
   "devDependencies": {
     "babel-core": "^6.26.0",
