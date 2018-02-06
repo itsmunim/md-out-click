@@ -6,6 +6,9 @@
   "author": "Munim Dibosh",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha src/**/*.spec.js"
+  },
   "files": [
     "dist/*.js",
     "src/*.js"
@@ -18,9 +21,13 @@
   ],
   "repository": "github:dibosh/md-out-click",
   "devDependencies": {
+    "angular-mocks": "^1.6.9",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
+    "mocha": "^5.0.0",
+    "should": "^13.2.1",
+    "sinon": "^4.2.2",
     "webpack": "^3.10.0"
   },
   "dependencies": {
