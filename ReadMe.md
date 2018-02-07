@@ -1,3 +1,4 @@
+![mdOutClick Logo](https://raw.githubusercontent.com/dibosh/md-out-click/master/readme-logo.jpg)
 #### mdOutClick
 Define what happens when you click outside an element; using this angular directive.
 
