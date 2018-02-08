@@ -21,9 +21,9 @@ The element, outside of which you want to capture the click event should
 have the `out-click` directive applied. The directive must be passed the function or the
 expression it needs to execute when the event occurs.
    ```
-     <aside class="sidenav" out-click="closeSideNav()"></aside>
+     <aside class="sidenav" on-out-click="closeSideNav()"></aside>
    ```
 Or, this is also do-able-
    ```
-     <aside class="sidenav" out-click="isSideNavOpen = false"></aside>
+     <aside class="sidenav" on-out-click="isSideNavOpen = false"></aside>
    ```
