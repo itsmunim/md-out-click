@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha src/**/*.spec.js"
+    "test": "karma start"
   },
   "files": [
     "dist/*.js",
@@ -17,7 +17,10 @@
     "click outside element",
     "angular",
     "directive",
-    "out click"
+    "out click",
+    "detect",
+    "off click",
+    "outer click"
   ],
   "repository": "github:dibosh/md-out-click",
   "devDependencies": {
