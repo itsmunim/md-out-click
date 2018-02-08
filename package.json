@@ -20,7 +20,8 @@
     "out click",
     "detect",
     "off click",
-    "outer click"
+    "outer click",
+    "on out click"
   ],
   "repository": "github:dibosh/md-out-click",
   "devDependencies": {
