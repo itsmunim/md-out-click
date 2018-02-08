@@ -1,3 +1,7 @@
+# v1.0.5
+- Update ReadMe with proper instructions
+- Update distribution files
+
 # v1.0.4
 - Change `out-click` attribute to `on-out-click`
 - Update logo & banners
