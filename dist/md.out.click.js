@@ -70,6 +70,10 @@
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _outClick = __webpack_require__(1);
 
 var _outClick2 = _interopRequireDefault(_outClick);
@@ -77,7 +81,9 @@ var _outClick2 = _interopRequireDefault(_outClick);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 angular.module('mdOutClick', []);
-angular.module('mdOutClick').directive('outClick', _outClick2.default);
+angular.module('mdOutClick').directive('onOutClick', _outClick2.default);
+
+exports.default = angular.module('mdOutClick');
 
 /***/ }),
 /* 1 */
@@ -94,7 +100,7 @@ function outClick($document, $parse) {
 
   return {
     compile: function compile($element, attr) {
-      var fn = $parse(attr['outClick']);
+      var fn = $parse(attr['onOutClick']);
       return function (scope, element) {
         element.on('click', function (event) {
           event.stopPropagation();
