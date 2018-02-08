@@ -7,7 +7,7 @@ describe('mdOutClick', function () {
   var OUTSIDE_CLICK = 2;
 
   function _compileDirective() {
-    var template = '<button ng-click="clickState = 1" out-click="clickState = 2"></button>';
+    var template = '<button ng-click="clickState = 1" on-out-click="clickState = 2"></button>';
     $scope.clickState = NO_CLICK;
     element = $compile(template)($scope);
     $scope.$digest();

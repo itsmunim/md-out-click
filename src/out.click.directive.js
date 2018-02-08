@@ -3,7 +3,7 @@ function outClick($document, $parse) {
 
   return {
     compile: function ($element, attr) {
-      var fn = $parse(attr['outClick']);
+      var fn = $parse(attr['onOutClick']);
       return function (scope, element) {
         element.on('click', function (event) {
           event.stopPropagation();
