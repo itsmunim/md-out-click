@@ -1,3 +1,10 @@
+# v1.0.7
+- Add code coverage
+- Add coverage support using `codecov`
+
+# v1.0.6
+- Some changes in setup
+
 # v1.0.5
 - Update ReadMe with proper instructions
 - Update distribution files
