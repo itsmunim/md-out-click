@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Wed Feb 07 2018 23:25:12 GMT+0600 (BDT)
+var webpackConfig = require('./webpack.config.js');
 
 module.exports = function (config) {
   config.set({
@@ -18,7 +19,8 @@ module.exports = function (config) {
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'src/index.js',
-      'test/out.click.directive.spec.js'
+      'test/out.click.directive.spec.js',
+      'test/out.click.service.spec.js'
     ],
 
 
@@ -29,8 +31,10 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/index.js': ['webpack', 'coverage']
+      'src/*.js': ['webpack', 'coverage']
     },
+
+    webpack: webpackConfig,
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
