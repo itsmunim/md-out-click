@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "karma start",
+    "test": "webpack && karma start",
     "build": "webpack",
     "report-coverage": "codecov"
   },
