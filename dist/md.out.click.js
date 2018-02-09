@@ -78,10 +78,14 @@ var _outClick = __webpack_require__(1);
 
 var _outClick2 = _interopRequireDefault(_outClick);
 
+var _outClick3 = __webpack_require__(2);
+
+var _outClick4 = _interopRequireDefault(_outClick3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 angular.module('mdOutClick', []);
-angular.module('mdOutClick').directive('onOutClick', _outClick2.default);
+angular.module('mdOutClick').directive('onOutClick', _outClick2.default).service('OutClickService', _outClick4.default);
 
 exports.default = angular.module('mdOutClick');
 
@@ -119,6 +123,65 @@ function outClick($document, $parse) {
 outClick.$inject = ['$document', '$parse'];
 
 exports.default = outClick;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var OutClickService = function () {
+  function OutClickService($document) {
+    var _this = this;
+
+    _classCallCheck(this, OutClickService);
+
+    this._outClickHandlerMap = {};
+    this._handlerCount = 0;
+    $document.find('body').on('click', function (event) {
+      Object.keys(_this._outClickHandlerMap).forEach(function (handlerId) {
+        _this._outClickHandlerMap[handlerId](event);
+      });
+    });
+  }
+
+  _createClass(OutClickService, [{
+    key: 'register',
+    value: function register(element, handler) {
+      this._handlerCount++;
+      element.$$outClickService = {
+        handlerId: this._handlerCount
+      };
+
+      element.on('click', function (event) {
+        event.stopPropagation();
+      });
+
+      this._outClickHandlerMap[this._handlerCount] = handler;
+    }
+  }, {
+    key: 'unregister',
+    value: function unregister(element) {
+      var handlerId = (element.$$outClickService || {}).handlerId;
+      delete this._outClickHandlerMap[handlerId];
+    }
+  }]);
+
+  return OutClickService;
+}();
+
+OutClickService.$inject = ['$document'];
+
+exports.default = OutClickService;
 
 /***/ })
 /******/ ]);
