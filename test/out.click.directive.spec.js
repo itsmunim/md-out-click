@@ -1,4 +1,4 @@
-describe('mdOutClick', function () {
+describe('mdOutClick: on-out-click directive', function () {
   'use strict';
 
   var $scope, element, $body, $document, $compile;
@@ -40,6 +40,10 @@ describe('mdOutClick', function () {
   describe('before clicking, click on element and outside the element', function () {
     beforeEach(function () {
       _compileDirective();
+    });
+
+    afterEach(function () {
+      element.remove();
     });
 
     it('should keep the click state defined in scope as it is', function () {
