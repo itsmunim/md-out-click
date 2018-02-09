@@ -9,3 +9,7 @@ before_script:
   - yarn global add webpack
   - yarn global add karma-cli
   - yarn install
+  - yarn global add codecov
+script:
+  - yarn test
+  - yarn report-coverage
