@@ -1,0 +1,46 @@
+<div class="jumbotron">
+  <h1 class="display-4">Using with Side Navigation</h1>
+  <hr class="my-4">
+  <h5>Problem:</h5>
+  <p>
+    You are showing a side navigation panel, and want to close it when clicked anywhere outside.
+  </p>
+  <h5>Solution: </h5>
+  <p>
+    <pre>
+      <code>
+        // Include mdOutClick in app dependency
+        angular.module('yourApp', [
+          // other dependencies
+          'mdOutClick'
+        ]);
+
+        // In your template
+        &lt;ul class="nav flex-column" on-out-click="close()"&gt;
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;Side Nav Menu 0&lt;/a&gt;
+          &lt;/li&gt;
+
+          &lt;li class="nav-item"&gt;
+            &lt;a href="#" class="nav-link"&gt;Side Nav Menu 1&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+
+
+        // Inside controller
+        $scope.isMenuClose = true;
+
+        $scope.close = function () {
+          $scope.isMenuClose = true;
+        };
+
+        $scope.open = function () {
+          $scope.isMenuClose = false;
+        };
+      </code>
+    </pre>
+
+    Or using the <mark>OutClickService</mark> by defining <mark>sidenav</mark>
+    as your own <mark>directive</mark> following a similar approach as explained in <mark>dropdown</mark> example.
+  </p>
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dropdownDemo">
+<head>
+  <meta charset="UTF-8">
+  <title>Using mdOutClick with BootStrap Dropdowns</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+</head>
+<body ng-controller="MainController">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="https://github.com/dibosh/md-out-click">mdOutClick</a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown" on-out-click="isDropdownVisible = false">
+        <a class="nav-link dropdown-toggle" href="#" ng-click="isDropdownVisible = true">
+          {{ examples[selectedExampleIndex].name }}
+        </a>
+        <div class="dropdown-menu" ng-class="{'show': isDropdownVisible}">
+          <a href class="dropdown-item" ng-click="selectExample($index)" ng-repeat="example in examples">
+            {{ example.name }}
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <ng-include src="examples[selectedExampleIndex].templateUrl"></ng-include>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<script src="../dist/md.out.click.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  angular.module('dropdownDemo', [
+    'mdOutClick'
+  ]);
+  angular.module('dropdownDemo')
+    .controller('MainController', function ($scope) {
+      $scope.examples = [
+        {
+          name: 'Dropdowns',
+          templateUrl: 'dropdown.demo.html'
+        },
+        {
+          name: 'Side Navigation',
+          templateUrl: 'side.nav.demo.html'
+        }
+      ];
+
+      $scope.selectedExampleIndex = 0;
+
+      $scope.selectExample = function (index) {
+        $scope.selectedExampleIndex = index;
+        $scope.hideDropdown();
+      };
+
+      // dropdown specific
+      $scope.isDropdownVisible = false;
+
+      $scope.hideDropdown = function () {
+        $scope.isDropdownVisible = false;
+      };
+
+      $scope.showDropdown = function () {
+        $scope.isDropdownVisible = true;
+      };
+    });
+</script>
+</body>
+</html>
