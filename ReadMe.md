@@ -66,10 +66,19 @@ Or, this is also do-able-
    ```
    <aside class="sidenav" ng-class="{'open': isSideNavOpen}" on-out-click="isSideNavOpen = false"></aside>
    ```
-To learn more about the usage, check out the examples given in `examples` folder. To run and explore
-examples from local-
-  - Clone the repo - [md-out-click](https://github.com/dibosh/md-out-click)
-  - Run in Terminal: `cd md-out-click`
-  - Run in Terminal: `yarn global add http-server`
-  - Run in Terminal: `http-server`
-  - Open in Browser: [http://127.0.0.1:8080/examples/](http://127.0.0.1:8080/examples/) 
+Using the `OutClickService`, you can apply different handlers for different `element` at the same time-
+
+  ```
+  // needs jquery support to get element like this
+  var elem1 = $document.find('#e1');
+  var elem2 = $document.find('#e2');
+  
+  OutClickService.register(elem1, function () {
+    // do something when click is outside elem1
+  });
+  
+  OutClickService.register(elem2, function () {
+    // do something when click is outside elem2
+  });
+  
+  ```
