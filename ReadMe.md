@@ -66,3 +66,10 @@ Or, this is also do-able-
    ```
    <aside class="sidenav" ng-class="{'open': isSideNavOpen}" on-out-click="isSideNavOpen = false"></aside>
    ```
+To learn more about the usage, check out the examples given in `examples` folder. To run and explore
+examples from local-
+  - Clone the repo - [md-out-click](https://github.com/dibosh/md-out-click)
+  - Run in Terminal: `cd md-out-click`
+  - Run in Terminal: `yarn global add http-server`
+  - Run in Terminal: `http-server`
+  - Open in Browser: [http://127.0.0.1:8080/examples/](http://127.0.0.1:8080/examples/) 
