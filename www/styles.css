@@ -36,6 +36,11 @@ footer {
   background-color: #f5f5f5;
 }
 
+.navbar-brand img {
+  height: 24px;
+  margin-right: 5px;
+}
+
 .social-buttons {
   display: flex;
   align-items: center;
