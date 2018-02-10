@@ -1,0 +1,83 @@
+<div class="jumbotron">
+  <h1 class="display-4">Using with Dropdowns</h1>
+  <p class="lead">
+    Bootstrap is awesome to create stunning websites in minutes. But most of the time you need more control
+    over the components writing your own AngularJS codes, ending up only using the <mark>bootstrap.css</mark> and excluding
+    the JS.
+  </p>
+  <hr class="my-4">
+  <h5>Problem:</h5>
+  <p>
+    You are showing a dropdown using the <mark>bootstrap.css</mark>, the only problem is you can't close it when clicked
+    outside anywhere else.
+  </p>
+  <h5>Solution: </h5>
+  <div hljs>
+  // Include mdOutClick in app dependency
+  angular.module('yourApp', [
+    // other dependencies
+    'mdOutClick'
+  ]);
+
+  // In your template
+  <div class="dropdown" on-out-click="hideDropdown()">
+    <a href class="btn btn-secondary dropdown-toggle" ng-click="showDropdown()">Show Dropdown</a>
+    <div class="dropdown-menu" ng-class="{'show': isDropdownVisible}">
+      <a href class="dropdown-item">Menu Item</a>
+    </div>
+  </div>
+
+  // Inside controller
+  $scope.isDropdownVisible = false;
+
+  $scope.hideDropdown = function () {
+    $scope.isDropdownVisible = false;
+  };
+
+  $scope.showDropdown = function () {
+    $scope.isDropdownVisible = true;
+  };
+  </div>
+  <hr>
+  <p>
+    Or using the <mark>OutClickService</mark> by defining <mark>dropdown</mark>
+    as your own <mark>directive</mark> as shown below.
+  </p>
+
+  <div hljs>
+  <div class="dropdown" on-out-click="hideDropdown()">
+    <a href class="btn btn-secondary dropdown-toggle" ng-click="showDropdown()">Show Dropdown</a>
+    <div class="dropdown-menu" ng-class="{'show': isDropdownVisible}">
+      <a href class="dropdown-item">Menu Item</a>
+    </div>
+  </div>
+  </div>
+  <p>
+    Define the directive itself-
+  </p>
+  <div hljs>
+  angular.module('yourApp').directive('dropdown', dropdownDirective);
+  dropdownDirective.$inject = ['OutClickService']; // explicitly inject the service
+
+  function dropdownDirective(OutClickService) {
+    return {
+      templateUrl: 'template.html',
+      restrict: 'E',
+      replace: 'true',
+      scope: true,
+      link: function (scope, element) {
+        scope.isDropdownVisible = false;
+        scope.showDropdown = function () {
+          $scope.isDropdownVisible = true;
+        };
+        // element is template root, i.e the div with class dropdown
+        // passed function is the handler/callback that gets executed on any click
+        // outside the element
+        OutClickService.register(element, function () {
+          scope.isDropdownVisible = false;
+        });
+      }
+    };
+  }
+  </div>
+</div>

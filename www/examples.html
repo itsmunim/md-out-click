@@ -1,0 +1,16 @@
+<main class="container" ng-controller="ExampleController">
+  <div class="row">
+    <span class="text-muted">Choose an Example</span>
+    <div class="dropdown" on-out-click="isDropdownVisible = false">
+      <a class="btn btn-secondary dropdown-toggle" href="#" ng-click="isDropdownVisible = true">
+        {{ examples[selectedExampleIndex].name }}
+      </a>
+      <div class="dropdown-menu" ng-class="{'show': isDropdownVisible}">
+        <a href class="dropdown-item" ng-click="selectExample($index)" ng-repeat="example in examples">
+          {{ example.name }}
+        </a>
+      </div>
+    </div>
+  </div>
+  <ng-include src="examples[selectedExampleIndex].templateUrl"></ng-include>
+</main>
