@@ -35,3 +35,13 @@ footer {
   line-height: 60px;
   background-color: #f5f5f5;
 }
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
+.social-buttons iframe:first-child {
+  margin-right: 15px;
+}
