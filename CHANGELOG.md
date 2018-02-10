@@ -1,3 +1,8 @@
+# v1.0.8
+- Add out click as a service
+- Add more tests and fix existings
+- Include browsable examples
+
 # v1.0.7
 - Add code coverage
 - Add coverage support using `codecov`
