@@ -35,13 +35,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
 <script src="../dist/md.out.click.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <script>
   angular.module('dropdownDemo', [
     'mdOutClick'
   ]);
   angular.module('dropdownDemo')
-    .controller('MainController', function ($scope) {
+    .controller('MainController', function ($scope, $document, $window) {
+      $document.ready(function () {
+        $window.hljs.initHighlighting();
+      });
       $scope.examples = [
         {
           name: 'Dropdowns',
