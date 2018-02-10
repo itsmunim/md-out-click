@@ -1,7 +1,7 @@
 describe('mdOutClick: on-out-click directive', function () {
   'use strict';
 
-  var $scope, element, $body, $document, $compile;
+  var $scope, element, $body, $compile;
   var NO_CLICK = 0;
   var ELEMENT_CLICK = 1;
   var OUTSIDE_CLICK = 2;
@@ -17,24 +17,8 @@ describe('mdOutClick: on-out-click directive', function () {
 
   beforeEach(inject(function ($rootScope, _$document_, _$compile_) {
     $compile = _$compile_;
-    $document = _$document_;
     $scope = $rootScope.$new();
-
-    $body = {
-      eventHandlers: {},
-      click: function () {
-        var self = this;
-        self.eventHandlers.click();
-      },
-      on: function (eventName, handler) {
-        var self = this;
-        self.eventHandlers[eventName] = handler;
-      }
-    };
-
-    spyOn($document, 'find').and.callFake(function () {
-      return $body;
-    });
+    $body = _$document_.find('body');
   }));
 
   describe('before clicking, click on element and outside the element', function () {
@@ -56,7 +40,7 @@ describe('mdOutClick: on-out-click directive', function () {
     });
 
     it('should change the click state so that it reflects the click was outside the element', function () {
-      $body.click();
+      $body.triggerHandler('click');
       expect($scope.clickState).toBe(OUTSIDE_CLICK);
     });
   });
