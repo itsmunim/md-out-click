@@ -12,7 +12,7 @@ Example- `<button ng-click="doSomething()" on-out-click="doSomethingElse()"></bu
 
 ### Installation
 - `npm install md-out-click`
-- Webpack:
+- **Webpack**:
   1. Import the module in your `index.js` or `entry.js` file, import the module
   right after where you imported `angular`
     - `import mdOutClick from 'mdOutClick'` (ES6)
@@ -29,7 +29,7 @@ Example- `<button ng-click="doSomething()" on-out-click="doSomethingElse()"></bu
   ]);
   ```   
     
-- Legacy way:
+- **Legacy Way**:
 
   1. Include the `md.out.click.min.js` file as script tag in between angular source
   and your app specific script files.
@@ -82,3 +82,5 @@ Using the `OutClickService`, you can apply different handlers for different `ele
   });
   
   ```
+
+To learn more, check out the examples at - https://dibosh.github.io/md-out-click

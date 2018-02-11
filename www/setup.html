@@ -1,0 +1,42 @@
+<main class="container" ng-controller="SetupController">
+  <div class="jumbotron">
+    <h1 class="display-5">
+      Installation
+    </h1>
+    <div hljs>npm install md-out-click</div>
+
+    <h1 class="display-5">
+      Using the old way
+    </h1>
+    <p>
+      Include the script in between angular source script & your app specific scripts-
+    </p>
+    <div hljs>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/md-out-click/dist/md.out.click.min.js"></script>
+    <script src="app/app.js"></script>
+    </div>
+
+    <h1 class="display-5">
+      Using with Webpack
+    </h1>
+    <p>
+      Import and include mdOutClick module in your webpack entry file-
+    </p>
+    <div hljs>
+    // entry.js
+    import mdOutClick from 'mdOutClick'; // ES6
+    require('mdOutClick'); // ES5
+    </div>
+
+    <p>
+      Finally define <strong>mdOutClick</strong> as dependency in your angular app declaration-
+    </p>
+    <div hljs>
+    angular.module('yourApp', [
+      // other dependencies
+      'mdOutClick'
+    ]);
+    </div>
+  </div>
+</main>

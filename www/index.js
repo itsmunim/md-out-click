@@ -9,6 +9,9 @@ angular.module('dropdownDemo')
 angular.module('dropdownDemo')
   .controller('ExampleController', ExampleController);
 
+angular.module('dropdownDemo')
+  .controller('SetupController', SetupController);
+
 
 HomeController.$inject = ['$scope'];
 
@@ -17,7 +20,8 @@ function HomeController($scope) {
     current: '/',
     routes: {
       '/': 'www/home.html',
-      '/examples': 'www/examples.html'
+      '/examples': 'www/examples.html',
+      '/setup': 'www/setup.html'
     },
     navigateTo: function (route) {
       this.current = route;
@@ -57,4 +61,11 @@ function ExampleController($scope) {
   $scope.showDropdown = function () {
     $scope.isDropdownVisible = true;
   };
+}
+
+
+SetupController.$inject = ['$scope'];
+
+function SetupController($scope) {
+
 }
