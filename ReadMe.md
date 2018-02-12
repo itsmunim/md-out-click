@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/dibosh/md-out-click/branch/master/graph/badge.svg)](https://codecov.io/gh/dibosh/md-out-click)
 [![all downloads](https://img.shields.io/npm/dt/md-out-click.svg)]()
 
-`mdOutClick` is an AngularJS module, having a directive `on-out-click`; which enables you to
+[mdOutClick](https://dibosh.github.io/md-out-click) is an AngularJS module, having a directive `on-out-click`; which enables you to
 capture click events outside of an element and fire handlers based on that.
 
 Example- `<button ng-click="doSomething()" on-out-click="doSomethingElse()"></button`
