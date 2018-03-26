@@ -1,6 +1,6 @@
 {
   "name": "md-out-click",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Define what happens when you click outside a region",
   "main": "dist/md.out.click.min.js",
   "author": "dibosh <abdulmunim.buet@gmail.com>",
