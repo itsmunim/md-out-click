@@ -6,7 +6,6 @@ branches:
     - master
 before_script:
   - npm install -g yarn
-  - yarn global add webpack
   - yarn global add karma-cli
   - yarn install
   - yarn global add codecov
